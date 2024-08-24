@@ -11,5 +11,20 @@ const env = "DEV"; // Toggle between these possible values "DEV" | "STAGE" | "PR
 let databaseCredential = "devuser:password";
 
 // Task: Add code here
+function getDatabaseCredential(env) {
+    switch (env) {
+        case 'STAGE':
+            return 'stageuser:password';
+        case 'PROD':
+            return 'produser:password';
+        default:
+            return 'devuser:password';
+    }
+}
+
+databaseCredential = getDatabaseCredential(env)
 
 console.log(`Database credential for environment ${env} is ${databaseCredential}`);
+module.exports = {
+    getDatabaseCredential
+}

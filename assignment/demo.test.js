@@ -1,11 +1,18 @@
 // the require() is used for managing dependencies and modules
 // in this case, the files q2-arrays-loops and q3-objects are modules for this file.
 // const {} is what we call object destructuring and it allows us to unpack properties from objects into variables.
+const {getDatabaseCredential} = require("./q1-control-flow");
 const {studentList, printStudentNames} = require("./q2-arrays-loop");
 const {convert} = require("./q3-objects");
 
 //The describe () creates a block that groups together several related tests
 describe("Demo", ()=>{
+    it("should return the appriopriate databaseCredential based on environment", () => {
+        const databaseCredential = getDatabaseCredential('STAGE')
+        const databaseCredential2 = getDatabaseCredential('PROD')
+        expect(databaseCredential).toBe("stageuser:password")
+        expect(databaseCredential2).toBe("produser:password")
+    })
     //it() describes a single test
     it("should test the printStudentNames function of q2", ()=>{
         //The spyOn creates a mock function based on the method inside, in this case console.log
