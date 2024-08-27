@@ -23,6 +23,21 @@ Break out into groups and discussion what are the following:
 Provide examples for each.
 */
 
+// Object Destructuring
+const person1 = {
+    name: "John Doe",
+    age: 34
+}
+
+const {personName, personAge} = person1;
+console.log(personName, personAge);
+
+// Template Literals
+const name1 = "John Doe";
+const age1 = 34;
+
+console.log(`My name is ${name1} and I am ${age1} years old`);
+
 /*
 Exercise:
 1. Create an object called "school" with the following fields (values are up to the learner): 
@@ -32,3 +47,11 @@ Exercise:
     d. coursesOffered - Array containing 3 Strings
 2. Print in the console the following sentence using the "school object" - "Welcome to <name> and we offer <coursesOffered>
 */
+
+let school = {
+    Name: "High School",
+    yearEstablished: 2011,
+    isActive: true,
+    coursesOffered: ['Math', 'Science', 'English']
+}
+console.log(`Welcome to ${school.Name} and we offer ${school.coursesOffered}`)
