@@ -102,12 +102,12 @@ const arr2 = [13, 2, 6, 7];
 */
 
 
-const grades = [10, 20, 30, 40, 50] 
+const grades = [10, 20, 30, 40, 50]
 let total = 0
 for (let i = 0; i < grades.length; i++) {
     total += grades[i]
 }
-console.log("Average of grades: ", total/grades.length)
+console.log("Average of grades: ", total / grades.length)
 
 const arr1 = [15, 12, 11, 29, 5];
 const arr2 = [13, 2, 6, 7];
@@ -115,3 +115,15 @@ let combinedArray = arr1.concat(arr2)
 let oddIndexArray = combinedArray.filter((value, index) => index % 2 !== 0)
 console.log("Combined Array: ", combinedArray)
 console.log("Array with odd indexes: ", oddIndexArray)
+
+// spread operator
+let arr3 = [...arr1, ...arr2]
+console.log("Array 3: ", arr3)
+
+let arr4 = [...arr1, [...arr2]]
+console.log("Array 4: ", arr4)
+
+let object1 = { name: "John", age: 20 }
+let object2 = { personName: "James", personAge: 222 }
+let object3 = { ...object1, ...object2 }
+console.log("Object 3: ", object3)
